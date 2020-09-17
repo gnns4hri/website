@@ -1,6 +1,0 @@
----
-exclude: ['README.md', 'sonata', 'sngnn1d']
-permalink: ':title'
-highlighter: rouge
-safe: false
-title: 'gnns4hri'

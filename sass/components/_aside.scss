@@ -1,0 +1,66 @@
+.main-aside{
+    background-color: $color1;
+    color: white;
+    text-align: center;
+
+    &__title{
+        margin: 1em 0;
+        line-height: 2em;
+
+        text-transform: uppercase;
+        a{
+            color:white;
+        }
+    }
+
+    &__nav-filter{
+        input{
+            border-radius: 0%;
+            background-color: $color2;
+            color: white;
+            width: 80%;
+    
+            margin-bottom: 2em;
+            padding: 8px;
+            border: none;
+        }
+    }
+
+    /* Menu styles */
+    .main-nav{
+        text-align: left;
+
+        li{
+            a{
+                display: block;
+                color: white;
+                &:hover{
+                    background-color: darken($color1, 10%);
+                }
+            }
+        }
+
+        .main-menu > li{
+
+            & > a{
+                font-size: 1.5em;
+                font-weight: bold;
+                line-height: 1.5em;
+                padding-left: 1em;
+            }
+        }
+
+        .main-menu li ul li{
+            a{
+                font-size: 1.2em;
+                padding: .3em 1.5em .3em 2.3em;
+            }
+        }
+
+        .main-menu__item--active > a{
+            background-color: darken($color1, 10%);
+        }
+    }
+}
+
+
