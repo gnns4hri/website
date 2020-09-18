@@ -3,6 +3,8 @@
     color: white;
     text-align: center;
 
+    transition: .4s left ease-in-out;
+
     &__title{
         margin: 1em 0;
         line-height: 2em;
@@ -26,7 +28,7 @@
         }
     }
 
-    /* Menu styles */
+/* Menu styles */
     .main-nav{
         text-align: left;
 
@@ -62,5 +64,7 @@
         }
     }
 }
+
+/* Toggle menu styles */
 
 
