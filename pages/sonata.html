@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>GNNs for HRI
-    </title>
+    <title>gnns4hri - Graph Neural Networks for Human-Robot Interaction</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- <link rel="icon" type="image/png" href="../img/favicon/rocket-solid.png"> -->
@@ -15,10 +14,10 @@
       <input type="checkbox" id="menu-icon">
       <label for="menu-icon"><i class="fas fa-bars"></i></label>
       <header class="main-header">
-        <h1 class="main-header__title">Graph Neural Networks for Human-Robot interactions</h1>
+        <h1 class="main-header__title">Graph Neural Networks for Human-Robot Interaction</h1>
       </header>
       <aside class="main-aside">
-        <h1 class="main-aside__title"><a href="../index.html">Projects</a></h1>
+        <h1 class="main-aside__title"><a href="../index.html">gnns4hri projects</a></h1>
         <div class="main-aside__nav-filter">
           <input type="text" id="filter" onkeyup="myFilter()" placeholder="Search for projects...">
         </div>
@@ -26,35 +25,30 @@
           <ul class="main-menu" id="menu">
             <li class="main-menu__item--active"><a href="#">SONATA</a>
               <ul class="main-menu__submenu">
-                <li class="submenu__item"><a href="#">Motivation</a></li>
-                <li class="submenu__item"><a href="#">About</a></li>
-                <li class="submenu__item"><a href="#">Software Requirements</a></li>
-                <li class="submenu__item"><a href="#">Usage</a></li>
-                <li class="submenu__item"><a href="#">Video</a></li>
-                <li class="submenu__item"><a href="#">Tutorial: Customize SONATA</a></li>
+                <li class="submenu__item"><a href="#introduction">Introduction</a></li>
+                <li class="submenu__item"><a href="#requirements">Software Requirements</a></li>
+                <li class="submenu__item"><a href="#usage">How to run the default tool</a></li>
+                <li class="submenu__item"><a href="#tutorial">Tutorial: Customize SONATA</a></li>
               </ul>
             </li>
             <li class="main-menu__item"><a href="./sngnn1d.html">SNGNN1D</a></li>
-            <li class="main-menu__item"><a href="./sngnn2d.html">SNGNN2D</a></li>
-            <li class="main-menu__item"><a href="./sngnnrl.html">SNGNN-RL</a></li>
           </ul>
         </nav>
       </aside>
       <main class="main-content">
+
+        <h1>SONATA</h1>  
+        <h2>A Toolkit to Generate Social Navigation Datasets and HRI</h2>
+
         <section class="main-section">
-          <h2 class="main-section__title"><a href="#">Motivation</a></h2>
+          <h2 class="main-section__title"><a name="introduction">Introduction</a></h2>
           <div class="main-section__content">
+
             <p>Social navigation datasets are necessary to assess social navigation algorithms and train machine learning algorithms. Most of the currently available datasets target pedestrians’ movements as a pattern to be replicated by robots. It can be argued that one of the main reasons for this to happen is that compiling datasets where real robots are manually controlled, as they would be expected to behave when moving,is a very resource intensive task. Another aspect that is often missing in datasets is symbolic information that could be relevant, such as human activities, relationships or interactions. Unfortunately, the available datasets targeting robots and supporting symbolic information are restricted to static scenes. Our approach argues that simulation can be used to gather social navigation data in an effective and cost-efficient way and presents a toolkit for this purpose. A use case studying the application of graph neural networks to create learned control policies using supervised learning is presented as an example of how it can be used.</p>
-          </div>
-        </section>
 
-        <section class="main-section">
-          <h2 class="main-section__title"><a href="#">About</a></h2>
-          <div class="main-section__content">
-            <h1>SONATA</h1>  
-            <p>SONATA: A Toolkit to Generate Social Navigation Datasets and HRI</p>
+            <iframe width="640" height="350" src="https://www.youtube.com/embed/i_kkKqTwbBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-            <h2>Introduction</h2>
+            
             <p>The toolkit is used to generate the dataset by simulating the scenarios for robot's navigation in a social setting. We show an usecase of this data collected from the toolkit by converting into graphs and feeding it into the GNNs to predicts the robot's path in a given scene. The data collected from the toolkit comprises of the following for a given entity:</p>
 
             <ul>
@@ -147,7 +141,7 @@
         </section>
 
         <section class="main-section">
-          <h2 class="main-section__title"><a href="#">Software Requirements</a></h2>
+          <h2 class="main-section__title"><a name="requirements">Software Requirements</a></h2>
           <div class="main-section__content">
             <ol>
               <li> PyTorch <a href="https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/"> https://pytorch.org/get-started/locally/</a></li>
@@ -160,10 +154,9 @@
         </section>
 
         <section class="main-section">
-          <h2 class="main-section__title"><a href="#">Usage</a></h2>
+          <h2 class="main-section__title"><a name="usage">How to run the default tool</a></h2>
           <div class="main-section__content">
-            <h1>Running the repo</h1> 
-            <p>After cloning the directory, execute the following commands:</p>
+            <p>After cloning the directory, execute the following commands:
             <ol>
               <li>Shift the interfaces to proper location.</li>
               <pre>
@@ -179,7 +172,8 @@
                 </kdb>
               </pre>
             </ol>
-            <h1>Usage</h1>
+            </p>
+            
             <p>After you run the above commands the SONATA GUI opens up.</p>
 
             <ul>
@@ -208,14 +202,7 @@
         </section>
 
         <section class="main-section">
-          <h2 class="main-section__title"><a href="#">Video</a></h2>
-          <div class="main-section__content">
-            <iframe width="640" height="350" src="https://www.youtube.com/embed/i_kkKqTwbBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </section>
-
-        <section class="main-section">
-          <h2 class="main-section__title"><a href="#">Tutorial: Customize SONATA</a></h2>
+          <h2 class="main-section__title"><a name="tutorial">Tutorial: Customize SONATA</a></h2>
           <div class="main-section__content">
             <h1>Where to change/add code in the repository</h1>
 

@@ -424,7 +424,7 @@ header.main-header h1 {
 .main-aside__title {
   margin: 1em 0;
   line-height: 2em;
-  text-transform: uppercase;
+/*   text-transform: uppercase; */
 }
 .main-aside__title a {
   color: white;
