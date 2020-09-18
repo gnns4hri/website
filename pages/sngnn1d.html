@@ -24,7 +24,14 @@
         <nav class="main-nav">
           <ul class="main-menu" id="menu">
             <li class="main-menu__item"><a href="sonata.html">Sonata</a></li>
-            <li class="main-menu__item--active"><a href="#">SNGNN1D</a></li>
+            <li class="main-menu__item--active"><a href="#">SNGNN1D</a>
+              <ul class="main-menu__submenu">
+                <li class="submenu__item"><a href="#motivation">Motivation</a></li>
+                <li class="submenu__item"><a href="#scenes">What are the scenes composed of?</a></li>
+                <li class="submenu__item"><a href="#results">Results</a></li>
+                <li class="submenu__item"><a href="#references">References</a></li>
+              </ul>
+            </li>
             <li class="main-menu__item"><a href="datasets.html">Datasets</a></li>
          </ul>
         </nav>
@@ -68,7 +75,7 @@
         
 
         <section class="main-section">
-          <h2 class="main-section__title"><a name="scenes">Which data are we talking about</a></h2>
+          <h2 class="main-section__title"><a name="scenes">What are the scenes composed of?</a></h2>
           <div class="main-section__content">
             <p>To choose the best ML model we have first to consider the nature of the data. Which are the main characteristics of the data usually considered in human-aware navigation? 
             <ul>
@@ -180,7 +187,7 @@
             This video shows a simulated environment where the robot is being <b>MANUALLY MOVED WITH A JOYSTICK</b>. Its purpose is to show the response of the network for the different positions and its stability.
             </p>
             <video width="800" height="400" controls>
-                <source src="http://ljmanso.com/sngnn_video/sngnn.webm" type="video/webm" /> Your browser does not support the video tag.
+                <source src="../videos/sngnn1d/sngnn.webm" type="video/webm" /> Your browser does not support the video tag.
             </video>
           </div>
         </section>
