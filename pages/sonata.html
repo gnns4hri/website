@@ -47,7 +47,9 @@
 
             <p>Social navigation datasets are necessary to assess social navigation algorithms and train machine learning algorithms. Most of the currently available datasets target pedestrians’ movements as a pattern to be replicated by robots. It can be argued that one of the main reasons for this to happen is that compiling datasets where real robots are manually controlled, as they would be expected to behave when moving,is a very resource intensive task. Another aspect that is often missing in datasets is symbolic information that could be relevant, such as human activities, relationships or interactions. Unfortunately, the available datasets targeting robots and supporting symbolic information are restricted to static scenes. Our approach argues that simulation can be used to gather social navigation data in an effective and cost-efficient way and presents a toolkit for this purpose. A use case studying the application of graph neural networks to create learned control policies using supervised learning is presented as an example of how it can be used.</p>
 
-            <iframe width="640" height="350" src="https://www.youtube.com/embed/i_kkKqTwbBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="videoWrapper">
+              <iframe width="640" height="350" src="https://www.youtube.com/embed/i_kkKqTwbBE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
 
             
             <p>The toolkit is used to generate the dataset by simulating the scenarios for robot's navigation in a social setting. We show an usecase of this data collected from the toolkit by converting into graphs and feeding it into the GNNs to predicts the robot's path in a given scene. The data collected from the toolkit comprises of the following for a given entity:</p>
@@ -162,14 +164,14 @@
               <li>Shift the interfaces to proper location.</li>
               <pre>
                 <kdb>
-                  cp interfaces/* /opt/robocomp/interfaces
-                  cp interfaces/* /opt/robocomp/interfaces/IDSLs
+    cp interfaces/* /opt/robocomp/interfaces
+    cp interfaces/* /opt/robocomp/interfaces/IDSLs
                 </kdb>
               </pre>
               <li>Run the tool.</li>
               <pre>
                 <kdb>
-                  bash run.sh
+    bash run.sh
                 </kdb>
               </pre>
             </ol>
@@ -268,5 +270,5 @@ class NewGoal(object):
       </main>
     </div>
   </body>
-  <script src="js/index.js"></script>
+  <script src="../js/index.js"></script>
 </html>

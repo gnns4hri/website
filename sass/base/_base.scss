@@ -1,0 +1,65 @@
+// RWD Bases
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  font-family : "Roboto", sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+ul{
+  list-style: none;
+}
+
+a {
+  text-decoration : none;
+}
+
+.global-container{
+  max-width: 2000px;
+  margin: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  header.main-header{
+    flex-basis: $headeHeigh;
+    position: relative;
+    z-index: 100;
+  }
+  
+  aside.main-aside{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+
+    width: $asideWidth;
+    height: 100%;
+    padding-top: $headeHeigh;
+    
+  }
+  main.main-content{
+    margin-left: $asideWidth + $mainMargin;
+    margin-right: $mainMargin;
+    flex-grow: 1;
+  }
+}
+
+@media screen and (max-width: map-get($breakpoints, ml)), (orientation: landscape) and (max-width: map-get($breakpoints, ml)){
+  .main-aside{
+      left: -$asideWidth;
+  }
+  main.main-content{
+    margin: 0 !important;
+  }
+}
+
+
+
