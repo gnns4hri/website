@@ -364,9 +364,10 @@ a {
 .global-container {
   max-width: 2000px;
   margin: auto;
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  box-shadow: 5px 0 10px 0 #333;
 }
 .global-container header.main-header {
   flex-basis: 4.5em;
@@ -424,7 +425,7 @@ header.main-header h1 {
 .main-aside__title {
   margin: 1em 0;
   line-height: 2em;
-/*   text-transform: uppercase; */
+  text-transform: uppercase;
 }
 .main-aside__title a {
   color: white;
