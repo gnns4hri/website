@@ -423,11 +423,14 @@ header.main-header h1 {
   /* Menu styles */
 }
 .main-aside__title {
-  margin: 1em 0;
-  line-height: 2em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-size: 2.5rem;
   text-transform: uppercase;
 }
 .main-aside__title a {
+  display: block;
+  line-height: 1.4em;
   color: white;
 }
 .main-aside__nav-filter input {
@@ -475,6 +478,35 @@ header.main-header h1 {
 .main-content__title a {
   color: white;
   font-size: 0.75em;
+}
+
+.projects {
+  display: grid;
+  margin: 5rem auto;
+  width: min(85%, 1000px);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 400px 400px;
+  gap: 3rem;
+}
+
+.project-item {
+  box-shadow: 0 0 5px 2px rgba(51, 51, 51, 0.3);
+}
+.project-item a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: black;
+}
+.project-item__img {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  display: block;
+}
+.project-item__text {
+  margin-top: 10px;
+  padding: 0 15px;
 }
 
 input#menu-icon {

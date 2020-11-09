@@ -81,6 +81,11 @@
                 height: auto;
             }
 
+            figcaption{
+                text-align: center;
+                margin-bottom: 1.5em;
+            }
+
             .videoWrapper {
                 position: relative;
                 padding-bottom: calc(min(800px, 100%) * 0.5625) ; /* 16:9 */

@@ -26,16 +26,66 @@
           <ul class="main-menu" id="menu">
             <li class="main-menu__item"><a href="./sonata.html">SONATA</a></li>
             <li class="main-menu__item"><a href="./sngnn1d.html">SNGNN1D</a></li>
-            <li class="main-menu__item--active"><a href="#">SNGNN2D</a></li>
-            <li class="main-menu__item"><a href="./sngnnrl.html">SNGNN-RL</a></li>
+            <li class="main-menu__item--active"><a href="#">SNGNN2D</a>
+              <ul class="main-menu__submenu">
+                <li class="submenu__item"><a href="#motivation">Motivation and aims</a></li>
+                <li class="submenu__item"><a href="#dataset">Dataset generation</a></li>
+                <li class="submenu__item"><a href="#test">Testing the cost map with an A* planner</a></li>
+              </ul>
+            </li>
+            <li class="main-menu__item"><a href="./datasets.html">Datasets</a></li>
           </ul>
         </nav>
       </aside>
       <main class="main-content">
+        <h1>Cost map for social navigation generated with a GNN</h1>
+
+        <p>The project <b>SNGNN2D</b> pursuits to generate a 2D cost map that can be used for social navigation. The model is trained with a dataset of 2D images bootstrapped from 1D features. For doing that, we have made use of the model developed in SNGNN1D project as detailed in the <a href="#test">dataset section</a>. Additionally, we have used an A* planner to evaluate the efficiency and social compliance of the cost map (see <a href="#test">section</a>).
+        <p>
+        <br/>
+  
+        <a href="https://github.com/gnns4hri/graph2image">GitHub repository</a>.
+  
+        
+        
+        <section class="main-section">
+          <h2 class="main-section__title"><a name="motivation">Motivation and aims</a></h2>
+          <div class="main-section__content">
+            <p>
+              This project aims to provide a model for robot disruption in human comfortability that can efficiently generate two-dimensional cost maps for HAN considering interactions, an area that has been overlooked until recently.
+              The <b>contributions</b> of the project are two-fold: <b>a)</b> a technique to bootstrap two-dimensional datasets from one-dimensional datasets; and <b>b)</b> <b>SNGNN-2D</b>, an architecture that combines Graph Neural Networks (GNN) and Convolutional Neural Networks (CNN) to generate two dimensional cost maps based on the robot's knowledge.
+            </p>
+            <p>
+              After training, the resulting ML architecture is able to efficiently generate cost maps that can be used as a cost function for Human-Aware Navigation.            
+            </p>
+          </div>
+        </section>
 
         <section class="main-section">
-          <h2 class="main-section__title"><a href="#">Work in progress</a></h2>
+          <h2 class="main-section__title"><a name="dataset">Dataset generation</a></h2>
           <div class="main-section__content">
+            <p>
+            As most researchers working on human-aware navigation, we used to handcraft the proxemics models our robots used for navigation.
+            For instance, in our paper <em>"Socially Acceptable Robot Navigation over Groups of People"</em> (<a href="https://ieeexplore.ieee.org/document/8172454">link</a>) we used Gaussian Mixture Models to generate estimations of how irritating the presence of robots is in the different locations of any given environment (see <b>Fig. 1</b>).
+            </p>
+
+            <p>
+            It worked quite well, but it had limitations regarding scalability with respect to the number of factors to consider.
+            The models becoming slower was not the biggest of our problems.
+            The complexity of the code, the number of bugs to deal with and the time necessary to develop these new features made the process hard and expensive.
+            At some point we realised that following a (hybrid) data-driven approach would probably be a good idea, especially more cost-efficient than hand-engineering the models.
+            Additionally, it would allow us to investigate into aspects which we did not consider because we were aware of their importance.
+            </p>
+          </div>
+        </section>
+
+        <section class="main-section">
+          <h2 class="main-section__title"><a name="test">Testing the cost map with an A* planner</a></h2>
+          <div class="main-section__content">
+            <p>
+            As most researchers working on human-aware navigation, we used to handcraft the proxemics models our robots used for navigation.
+            
+            </p>
           </div>
         </section>
       
