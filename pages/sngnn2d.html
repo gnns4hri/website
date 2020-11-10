@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- <link rel="icon" type="image/png" href="../img/favicon/rocket-solid.png"> -->
     <script src="https://kit.fontawesome.com/55d924b99d.js" crossorigin="anonymous"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,300;1,400&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/pages.css">
   </head>
@@ -95,12 +97,36 @@
           <h2 class="main-section__title"><a name="test">Testing the cost map with an A* planner</a></h2>
           <div class="main-section__content">
             <p>
-            As most researchers working on human-aware navigation, we used to handcraft the proxemics models our robots used for navigation.
-            
+              To assess the effectiveness of SNGNN-2D, this section presents simulated navigation results and a comparison with the social aware navigation approach proposed in~\cite{Vega2019}, which is based in Gaussian Mixture Models (GMMs).
             </p>
+            <p>
+              The experiments were conducted under simulated environments using <a href="./sonata.html">SONATA</a>, a toolkit built on top of PyRep designed to simulate human-populated navigation scenarios and to generate datasets. <a href="./sonata.html">SONATA</a> provides an API to generate random scenarios including humans, objects, interactions, the robot and its goals. The walls delimiting a room are also randomly generated considering rectangular and L-shaped rooms.
+            </p>
+            <p>
+              SONATA also provides real-time access to the information of the elements in the environment and their properties. This information is used by the two tested methods to generate a cost map, which is integrated in a control system in charge of planning a minimum cost path (using A*) and moving the robot towards the goal position.
+            </p>
+            <p>
+              According to the number of humans in the room, three different types of scenarios were tested: rooms with 2 standing humans and 1 walking human \(S_A\), rooms with 4 standing humans and 2 walking humans \(S_B\) and rooms with 5 standing humans and 3 walking humans \(S_C\). All the scenarios included a randomly generated number of objects, room shape and wall length.  The number of interactions between humans or humans and objects was also randomly generated.  For each type of scenario, each method was executed in 50 different simulations to cover a wide range of situations. The results of applying each method were evaluated according to the following metrics:
+            </p>
+            <ul>
+              <li>\(\tau\): navigation time</li>
+              <li>\(d_t\): travelled distance</li>
+              <li>\(CHC\): cumulative heading changes</li>
+              <li>\(d_{min}\): minimum distance to a human</li>
+              <li>\(si_i\): number of intrusions into the intimate space of humans (closer than 0.45m)</li>
+              <li>\(si_p\): number of intrusions into the personal space of humans (closer than 1.2m)</li>
+              <li>\(si_r\): number of intrusions into an interaction (closer than 0.5m)</li>
+            </ul>
+
+            <p>
+              The following tables show the mean and the standard deviation of these metrics using SNGNN-2D and the GMM-based method, respectively, considering separately each group of scenarios. For the first two types of scenarios (\(S_A\) and \(S_B\)) results in relation to the mean values of most of the metrics can be considered comparable, although SNGNN-2D produces better results according to the travelled distance \(d_t\) and the cumulative heading changes \(CHC\). More variability is observed in the GMM-based approach as can be observed by the standard deviation of each parameter. In addition, for complex scenarios \(S_C\) greater differences can be observed between the two methods, showing that the proposed model behaves in a more socially acceptable way in crowded environments.
+            </p>
+
+            <video width="800" height="400" controls>
+              <source src="../videos/sngnn2d/ICRAvideo.mp4" type="video/webm" /> Your browser does not support the video tag.
+          </video>
           </div>
         </section>
-      
       </main>
     </div>
   </body>
