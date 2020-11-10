@@ -65,16 +65,28 @@
           <h2 class="main-section__title"><a name="dataset">Dataset generation</a></h2>
           <div class="main-section__content">
             <p>
-            As most researchers working on human-aware navigation, we used to handcraft the proxemics models our robots used for navigation.
-            For instance, in our paper <em>"Socially Acceptable Robot Navigation over Groups of People"</em> (<a href="https://ieeexplore.ieee.org/document/8172454">link</a>) we used Gaussian Mixture Models to generate estimations of how irritating the presence of robots is in the different locations of any given environment (see <b>Fig. 1</b>).
+              The acquisition of two-dimensional cost or disruption maps to create datasets for learning purposes generates a number of challenges. It also requires a significant commitment in comparison to their scalar value counterparts. A factor to consider is that the precision of the answer is dependent on the subjects' capability to represent the situation and their preferences graphically. Their inclination and motivation to stay engaged in the task is an additional challenge. 
+            </p>
+            <p>
+              From an ML perspective, when factoring in an approximately equal time commitment and effort when generating answers, providing a single scalar for each scenario would yield answers for a higher number of scenarios. This would in turn generate a higher variability in the input scenarios that would make the model less prone to overfitting.
             </p>
 
+            <figure>
+              <img src="../images/sngnn2d/dataset1.png" alt="screenshot of the SocNav1 tool" style="width: 640px" />
+              <figcaption>
+              <b>Fig. 1:</b> SNGNN-1D  can  be  used  to  estimate  the  disruption  caused  by the robot given a particular scenario.
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="../images/sngnn2d/dataset2.png" alt="screenshot of the SocNav1 tool" style="width: 640px" />
+              <figcaption>
+              <b>Fig. 2:</b> The  expected  2D  outputs  are  generated  performing  multiplequeries to SNGNN-1D, shifting the scenario around the robot.
+              </figcaption>
+            </figure>
+
             <p>
-            It worked quite well, but it had limitations regarding scalability with respect to the number of factors to consider.
-            The models becoming slower was not the biggest of our problems.
-            The complexity of the code, the number of bugs to deal with and the time necessary to develop these new features made the process hard and expensive.
-            At some point we realised that following a (hybrid) data-driven approach would probably be a good idea, especially more cost-efficient than hand-engineering the models.
-            Additionally, it would allow us to investigate into aspects which we did not consider because we were aware of their importance.
+              A dataset containing scalars as output data cannot directly be used to train a model which provides two dimensional output, so the approach followed in this case is to use a model which provides one-dimensional value estimations (SNGNN-1D) and sample its output shifting the robot's position, bootstrapping this way a two-dimensional dataset. The process of sampling is depicted in Fig.1 and 2. For each scenario in the bootstrapped dataset a matrix of 73x73 samples is generated. A total of 37131 scenarios were randomly generated following the same strategy of SocNav1. The dataset split for training, development and test is of 31191, 2970 and 2970 scenarios, respectively.
             </p>
           </div>
         </section>
