@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>GNNs for HRI
+    <title>gnns4hri - Graph Neural Networks for Human-Robot Interaction
     </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -31,6 +31,7 @@
             <li class="main-menu__item--active"><a href="#">SNGNN2D</a>
               <ul class="main-menu__submenu">
                 <li class="submenu__item"><a href="#motivation">Motivation and aims</a></li>
+                <li class="submenu__item"><a href="#howtest">How to try our model</a></li>
                 <li class="submenu__item"><a href="#dataset">Dataset generation</a></li>
                 <li class="submenu__item"><a href="#test">Testing the cost map with an A* planner</a></li>
               </ul>
@@ -44,6 +45,10 @@
 
         <p>The project <b>SNGNN2D</b> pursuits to generate a 2D cost map that can be used for social navigation. The model is trained with a dataset of 2D images bootstrapped from 1D features. For doing that, we have made use of the model developed in SNGNN1D project as detailed in the <a href="#test">dataset section</a>. Additionally, we have used an A* planner to evaluate the efficiency and social compliance of the cost map (see <a href="#test">section</a>).
         <p>
+
+        <video width="800" height="400" controls>
+          <source src="../videos/sngnn2d/ICRAvideo.mp4" type="video/webm" /> Your browser does not support the video tag.
+        </video>
         <br/>
   
         <a href="https://github.com/gnns4hri/graph2image">GitHub repository</a>.
@@ -60,6 +65,20 @@
             <p>
               After training, the resulting ML architecture is able to efficiently generate cost maps that can be used as a cost function for Human-Aware Navigation.            
             </p>
+            <figure>
+              <img src="../images/sngnn2d/model.png" alt="table with GMM results" style="width: 500px" />
+              <figcaption>
+              <b>Fig. 1:</b> Model pipeline.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="main-section">
+          <h2 class="main-section__title"><a name="howtest">How to try our model</a></h2>
+          <div class="main-section__content">
+            <h2>Using Docker</h2>
+            <h2>Regular instalation</h2>
           </div>
         </section>
 
@@ -76,14 +95,14 @@
             <figure>
               <img src="../images/sngnn2d/dataset1.png" alt="screenshot of the SocNav1 tool" style="width: 640px" />
               <figcaption>
-              <b>Fig. 1:</b> SNGNN-1D  can  be  used  to  estimate  the  disruption  caused  by the robot given a particular scenario.
+              <b>Fig. 2:</b> SNGNN-1D  can  be  used  to  estimate  the  disruption  caused  by the robot given a particular scenario.
               </figcaption>
             </figure>
 
             <figure>
               <img src="../images/sngnn2d/dataset2.png" alt="screenshot of the SocNav1 tool" style="width: 640px" />
               <figcaption>
-              <b>Fig. 2:</b> The  expected  2D  outputs  are  generated  performing  multiplequeries to SNGNN-1D, shifting the scenario around the robot.
+              <b>Fig. 3:</b> The  expected  2D  outputs  are  generated  performing  multiplequeries to SNGNN-1D, shifting the scenario around the robot.
               </figcaption>
             </figure>
 
@@ -122,9 +141,20 @@
               The following tables show the mean and the standard deviation of these metrics using SNGNN-2D and the GMM-based method, respectively, considering separately each group of scenarios. For the first two types of scenarios (\(S_A\) and \(S_B\)) results in relation to the mean values of most of the metrics can be considered comparable, although SNGNN-2D produces better results according to the travelled distance \(d_t\) and the cumulative heading changes \(CHC\). More variability is observed in the GMM-based approach as can be observed by the standard deviation of each parameter. In addition, for complex scenarios \(S_C\) greater differences can be observed between the two methods, showing that the proposed model behaves in a more socially acceptable way in crowded environments.
             </p>
 
-            <video width="800" height="400" controls>
-              <source src="../videos/sngnn2d/ICRAvideo.mp4" type="video/webm" /> Your browser does not support the video tag.
-          </video>
+            <figure>
+              <img src="../images/sngnn2d/ourResults.png" alt="table with our results" style="width: 500px" />
+              <figcaption>
+              <b>TABLE 1:</b> Navigation results using the GMM-based method. Mean and Standard Deviation of the metrics for each group of scenarios.
+              </figcaption>
+            </figure>
+
+            <figure>
+              <img src="../images/sngnn2d/GMMResults.png" alt="table with GMM results" style="width: 500px" />
+              <figcaption>
+              <b>TABLE 2:</b> Navigation results using SNGNN-2D. Mean and Standard Deviation of the metrics for each group of scenarios.
+              </figcaption>
+            </figure>
+
           </div>
         </section>
       </main>
